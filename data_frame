@@ -3,3 +3,9 @@ import numpy  as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
+class MenuOption1:
+    columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
+    df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+    print(df)
+
+    
