@@ -24,3 +24,25 @@ class MenuOption2:
 
     plt.plot(x, y)
     plt.show()    
+
+class MenuOption3: 
+    columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
+    df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+    print(df)
+
+    x=df["Bird Type"]
+    y=df["September 1 - November 30 (Autumn)"]
+
+    plt.plot(x, y)
+    plt.show()
+
+class MenuOption4:
+    columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
+    df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+    print(df)
+
+    x=df["Bird Type"]
+    y=df["December 1 - February 28 (Winter)"]
+
+    plt.plot(x, y)
+    plt.show()
