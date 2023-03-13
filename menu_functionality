@@ -9,13 +9,17 @@ class MenuOption1:
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     print(df)
 
-    x=df["March 1 - May 31 (Spring)"]
-    y=df["Bird Type"]
+    x=df["Bird Type"]
+    y=df["March 1 - May 31 (Spring)"]
 
     plt.rcParams["figure.autolayout"] = True
-    plt.title("Bird Sightings in Spring")
+    plt.title("Bird Sightings March 1 - May 31")
     plt.xlabel("Bird Type")
-    plt.ylabel("March 1 - May 31")
+    plt.ylabel("Amount of Birds Sighted")
+
+    ax1 = plt.subplot()
+    ax1.scatter(x, y, c=y, s=50, alpha=0.5)
+    ax1.set_xticklabels(x, rotation=90)
 
     plt.plot(x, y)
     plt.show()
@@ -28,6 +32,15 @@ class MenuOption2:
     x=df["Bird Type"]
     y=df["June 1 - August 31 (Summer)"]
 
+    plt.rcParams["figure.autolayout"] = True
+    plt.title("Bird Sightings June 1 - August 31")
+    plt.xlabel("Bird Type")
+    plt.ylabel("Amount of Birds Sighted")
+
+    ax1 = plt.subplot()
+    ax1.scatter(x, y, c=y, s=50, alpha=0.5)
+    ax1.set_xticklabels(x, rotation=90)
+
     plt.plot(x, y)
     plt.show()    
 
@@ -39,6 +52,15 @@ class MenuOption3:
     x=df["Bird Type"]
     y=df["September 1 - November 30 (Autumn)"]
 
+    plt.rcParams["figure.autolayout"] = True
+    plt.title("Bird Sightings September 1 - November 30")
+    plt.xlabel("Bird Type")
+    plt.ylabel("Amount of Birds Sighted")
+
+    ax1 = plt.subplot()
+    ax1.scatter(x, y, c=y, s=50, alpha=0.5)
+    ax1.set_xticklabels(x, rotation=90)
+
     plt.plot(x, y)
     plt.show()
 
@@ -49,6 +71,15 @@ class MenuOption4:
 
     x=df["Bird Type"]
     y=df["December 1 - February 28 (Winter)"]
+
+    plt.rcParams["figure.autolayout"] = True
+    plt.title("Bird Sightings December 1 - February 28 (Winter)")
+    plt.xlabel("Bird Type")
+    plt.ylabel("Amount of Birds Sighted")
+
+    ax1 = plt.subplot()
+    ax1.scatter(x, y, c=y, s=50, alpha=0.5)
+    ax1.set_xticklabels(x, rotation=90)
 
     plt.plot(x, y)
     plt.show()
