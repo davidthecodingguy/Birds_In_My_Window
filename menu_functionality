@@ -17,14 +17,19 @@ class MenuOption1:
     plt.xlabel("Bird Type")
     plt.ylabel("Amount of Birds Sighted")
 
-    ax1 = plt.subplot()
-    ax1.scatter(x, y, c=y, s=50, alpha=0.5)
+    fig, [ax1, ax2, ax3] = plt.subplot() #TypeError: Cannot unpack non-iterable Axes object
+    ax1.plot(x, y, linewidth=3, color="green")
+    ax2.plot(x, y, linewidth=3, color="red")
+    ax3.plot(x, y, linewidth=3, color="blue")
+    #ax1.scatter(x, y, c=y, s=50, alpha=0.5)
     ax1.set_xticklabels(x, rotation=90)
+    
 
-    plt.plot(x, y)
+    #plt.plot(x, y)#, kind="bar", figsize=(9.8))
+    fig.tight_layout()
     plt.show()
 
-class MenuOption2: 
+class MenuOption2:
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     print(df)
