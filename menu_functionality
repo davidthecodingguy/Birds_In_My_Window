@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 #set up like a program currently (will likely change). Each class is currently designed for instantiation into the main_menu file which would allow for menu options (like a console
 #application). My way of displaying different graphs/plots on command but it might be overly complicated
-class MenuOption1:
+def MenuOption1():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     print(df)
@@ -18,18 +18,18 @@ class MenuOption1:
     plt.xlabel("Bird Type")
     plt.ylabel("Amount of Birds Sighted")
 #trying to create multiple bar graphs (write now it's written for lines)
-    fig, [ax1, ax2, ax3] = plt.subplot() #TypeError: Cannot unpack non-iterable Axes object
-    ax1.plot(x, y, linewidth=3, color="green")
-    ax2.plot(x, y, linewidth=3, color="red")
-    ax3.plot(x, y, linewidth=3, color="blue")
+    fig, [ax1, ax2, ax3] = plt.subplots(1, 3)
+    ax1.bar(x, y, color="green")
+    ax2.bar(x, y, color="red")
+    ax3.bar(x, y, color="blue")
     #ax1.scatter(x, y, c=y, s=50, alpha=0.5)
     ax1.set_xticklabels(x, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     
 #need to create bar graph with matplotlib
-    #plt.plot(x, y)#, kind="bar", figsize=(9.8)
+    plt.bar(x, y)
     fig.tight_layout()
     plt.show()
-
+MenuOption1() #delete later, just to test functionality
 class MenuOption2:
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
