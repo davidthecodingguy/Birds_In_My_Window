@@ -3,4 +3,3 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-#how to call a class in another class?
