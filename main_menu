@@ -3,6 +3,6 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 #cannot import other file currently
-#import "menu_functionality" as mf
+#import menu_functionality as mf
 
 #mf.MenuOption1()

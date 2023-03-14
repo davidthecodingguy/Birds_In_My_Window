@@ -3,8 +3,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sb
-#set up like a program currently (will likely change). Each class is currently designed for instantiation into the main_menu file which would allow for menu options (like a console
-#application). My way of displaying different graphs/plots on command but it might be overly complicated
+
 def MenuOption1():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
@@ -20,22 +19,31 @@ def MenuOption1():
     y4=df["December 1 - February 28 (Winter)"]
 
     plt.rcParams["figure.autolayout"] = True
-    #plt.title("Bird Sightings March 1 - May 31")
-    #plt.xlabel("Bird Type")
-    #plt.ylabel("Amount of Birds Sighted")
 
     fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
-    ax1.bar(x1, y1, color="green", label="Spring")
+    ax1.bar(x1, y1, color="green")
+    ax1.set_title("March 1 - May 31")
+    ax1.set_ylabel("Amount of Birds Sighted")
+    ax1.set_xlabel("Bird Type")
     ax2.bar(x2, y2, color="yellow")
+    ax2.set_title("June 1 - August 31")
+    ax2.set_ylabel("Amount of Birds Sighted")
+    ax2.set_xlabel("Bird Type")
     ax3.bar(x3, y3, color="orange")
+    ax3.set_title("September 1 - November 30")
+    ax3.set_ylabel("Amount of Birds Sighted")
+    ax3.set_xlabel("Bird Type")
     ax4.bar(x4, y4, color="blue")
+    ax4.set_title("December 1 - February 28")
+    ax4.set_ylabel("Amount of Birds Sighted")
+    ax4.set_xlabel("Bird Type")
     ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     ax2.set_xticklabels(x2, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     ax3.set_xticklabels(x3, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     ax4.set_xticklabels(x4, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     
     plt.bar(x1, y1)
-    plt.bar(x1,y1,label="Spring")
+    plt.bar(x1, y1)
     plt.bar(x2, y2)
     plt.bar(x3, y3)
     plt.bar(x4, y4)
