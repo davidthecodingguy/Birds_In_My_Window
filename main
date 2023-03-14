@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sb
+import os
+from time import sleep
 #this method shows graphs for all 4 seasons in a side-by-side format
 def MenuOption1():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
@@ -110,14 +112,37 @@ def MenuOption4():
     plt.plot(x, y)
     plt.show()
 
-def main():
-    userinput1 = input("Please type 1 and hit the enter key to see a comparison of all bird sightings across all seasons!\n")
+def MenuOptionDescripts():
+    print("Please type the corresponding number and press enter to select a menu option:")
+    sleep(0.5)
+    print("1: Graphs of all bird sightings across all seasons")
+    sleep(0.5)
+    print("2: Graphs of the most sighted bird(s) for each season")
+    sleep(0.5)
+    print("3: Graphs of the least sighted bird(s) for each month")
+    sleep(0.5)
+    print("4: Graphs of the birds sighted during Spring and Summer")
+    sleep(0.5)
+    print("5: Graphs of the birds sighted during Autumn and Winter")
+    sleep(0.5)
+    print("6: Return to Menu")
+    sleep(0.5)
+    print("7: Clear Screen")
+    sleep(0.5)
+    print("8: Quit")
+
+
+def Main():
+    #userinput1 = input()
+    MenuOptionDescripts()
     if input("1", "1 ", "1.", "1. ", " 1", "1)", "1) ", "1:", "1: ", "1;", "1; ", "1,", "1, "):
         MenuOption1()
-        main()
-    userinput2 = input("Please type 2 and hit the enter key to see most amount of birds seen across all seasons!\n")
+        Main()
+    else: 
+        MenuOption2()
+    #userinput2 = input("Please type 2 and hit the enter key to see most amount of birds seen across all seasons!\n")
 
     #elif input: "2", MenuOption2()
     
 
-main() #JUST TO TEST FUNCITONALITY, DELETE LATER
+Main() #JUST TO TEST FUNCITONALITY, DELETE LATER
