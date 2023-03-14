@@ -3,12 +3,13 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sb
-
+#this method shows graphs for all 4 seasons in a side-by-side format
 def MenuOption1():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+    df.fillna(0, inplace=True) #eliminates null values by replacing them with 0s
     print(df)
-
+    
     x1=df["Bird Type"]
     y1=df["March 1 - May 31 (Spring)"]
     x2=df["Bird Type"]
@@ -25,7 +26,7 @@ def MenuOption1():
     ax1.set_title("March 1 - May 31")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
-    ax2.bar(x2, y2, color="yellow")
+    ax2.bar(x2, y2, color="red")
     ax2.set_title("June 1 - August 31")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
@@ -33,7 +34,7 @@ def MenuOption1():
     ax3.set_title("September 1 - November 30")
     ax3.set_ylabel("Amount of Birds Sighted")
     ax3.set_xlabel("Bird Type")
-    ax4.bar(x4, y4, color="blue")
+    ax4.bar(x4, y4, color="purple") #graph produced is multicolored, need to fix
     ax4.set_title("December 1 - February 28")
     ax4.set_ylabel("Amount of Birds Sighted")
     ax4.set_xlabel("Bird Type")
@@ -48,7 +49,7 @@ def MenuOption1():
     plt.bar(x3, y3)
     plt.bar(x4, y4)
     plt.show()
-
+#replace nulls with 0s using fillna
 MenuOption1() #delete later, just to test functionality
 
 def MenuOption2():
