@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-#cannot import other file currently
-#from menu_functionality import MenuOption1
+#CANNOT IMPORT/INSTANTIATE METHODS FROM OTHER FILES
+#import menu_functionality
 
 #mf.MenuOption1()

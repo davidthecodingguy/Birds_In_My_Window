@@ -34,7 +34,7 @@ def MenuOption1():
     ax3.set_title("September 1 - November 30")
     ax3.set_ylabel("Amount of Birds Sighted")
     ax3.set_xlabel("Bird Type")
-    ax4.bar(x4, y4, color="purple") #graph produced is multicolored, need to fix
+    ax4.bar(x4, y4, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
     ax4.set_title("December 1 - February 28")
     ax4.set_ylabel("Amount of Birds Sighted")
     ax4.set_xlabel("Bird Type")
@@ -49,8 +49,6 @@ def MenuOption1():
     plt.bar(x3, y3)
     plt.bar(x4, y4)
     plt.show()
-#replace nulls with 0s using fillna
-MenuOption1() #delete later, just to test functionality
 
 def MenuOption2():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
@@ -111,3 +109,14 @@ def MenuOption4():
 
     plt.plot(x, y)
     plt.show()
+
+def main():
+    userinput1 = input("Please type 1 and hit the enter key to see a comparison of all bird sightings across all seasons!\n")
+    userinput2 = input("Please type 2 and hit the enter key to see most amount of birds seen across all seasons!\n")
+
+
+    if input: "1", "1 ", "1.", "1. ", " 1", "1)", "1) ", "1:", "1: ", "1;", "1; ", "1,", "1, ", userinput1, MenuOption1()
+    elif input: "2", MenuOption2()
+    
+
+main() #JUST TO TEST FUNCITONALITY, DELETE LATER
