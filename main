@@ -112,11 +112,12 @@ def MenuOption4():
 
 def main():
     userinput1 = input("Please type 1 and hit the enter key to see a comparison of all bird sightings across all seasons!\n")
+    if input("1", "1 ", "1.", "1. ", " 1", "1)", "1) ", "1:", "1: ", "1;", "1; ", "1,", "1, "):
+        MenuOption1()
+        main()
     userinput2 = input("Please type 2 and hit the enter key to see most amount of birds seen across all seasons!\n")
 
-
-    if input: "1", "1 ", "1.", "1. ", " 1", "1)", "1) ", "1:", "1: ", "1;", "1; ", "1,", "1, ", userinput1, MenuOption1()
-    elif input: "2", MenuOption2()
+    #elif input: "2", MenuOption2()
     
 
 main() #JUST TO TEST FUNCITONALITY, DELETE LATER
