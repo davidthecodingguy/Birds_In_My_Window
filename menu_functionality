@@ -10,27 +10,40 @@ def MenuOption1():
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     print(df)
 
-    x=df["Bird Type"]
-    y=df["March 1 - May 31 (Spring)"]
+    x1=df["Bird Type"]
+    y1=df["March 1 - May 31 (Spring)"]
+    x2=df["Bird Type"]
+    y2=df["June 1 - August 31 (Summer)"]
+    x3=df["Bird Type"]
+    y3=df["September 1 - November 30 (Autumn)"]
+    x4=df["Bird Type"]
+    y4=df["December 1 - February 28 (Winter)"]
 
     plt.rcParams["figure.autolayout"] = True
-    plt.title("Bird Sightings March 1 - May 31")
-    plt.xlabel("Bird Type")
-    plt.ylabel("Amount of Birds Sighted")
-#trying to create multiple bar graphs (write now it's written for lines)
-    fig, [ax1, ax2, ax3] = plt.subplots(1, 3)
-    ax1.bar(x, y, color="green")
-    ax2.bar(x, y, color="red")
-    ax3.bar(x, y, color="blue")
-    #ax1.scatter(x, y, c=y, s=50, alpha=0.5)
-    ax1.set_xticklabels(x, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
+    #plt.title("Bird Sightings March 1 - May 31")
+    #plt.xlabel("Bird Type")
+    #plt.ylabel("Amount of Birds Sighted")
+
+    fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
+    ax1.bar(x1, y1, color="green", label="Spring")
+    ax2.bar(x2, y2, color="yellow")
+    ax3.bar(x3, y3, color="orange")
+    ax4.bar(x4, y4, color="blue")
+    ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
+    ax2.set_xticklabels(x2, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
+    ax3.set_xticklabels(x3, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
+    ax4.set_xticklabels(x4, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     
-#need to create bar graph with matplotlib
-    plt.bar(x, y)
-    fig.tight_layout()
+    plt.bar(x1, y1)
+    plt.bar(x1,y1,label="Spring")
+    plt.bar(x2, y2)
+    plt.bar(x3, y3)
+    plt.bar(x4, y4)
     plt.show()
+
 MenuOption1() #delete later, just to test functionality
-class MenuOption2:
+
+def MenuOption2():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     print(df)
@@ -50,7 +63,7 @@ class MenuOption2:
     plt.plot(x, y)
     plt.show()    
 
-class MenuOption3: 
+def MenuOption3(): 
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     print(df)
@@ -70,7 +83,7 @@ class MenuOption3:
     plt.plot(x, y)
     plt.show()
 
-class MenuOption4:
+def MenuOption4():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     print(df)
