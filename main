@@ -133,9 +133,10 @@ def MenuOptionDescripts():
 
 
 def Main():
-    #userinput1 = input()
     MenuOptionDescripts()
-    if input("1", "1 ", "1.", "1. ", " 1", "1)", "1) ", "1:", "1: ", "1;", "1; ", "1,", "1, "):
+    userinput1 = input()
+    if (userinput1 == "1" , userinput1 == "1 "):
+    #, "1.", "1. ", " 1", "1)", "1) ", "1:", "1: ", "1;", "1; ", "1,", "1, "):
         MenuOption1()
         Main()
     else: 
