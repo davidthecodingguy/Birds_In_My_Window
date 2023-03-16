@@ -112,7 +112,7 @@ def MenuOption4():
     plt.plot(x, y)
     plt.show()
 
-def MenuOptionDescripts():
+def MainMenuDescriptions():
     print("Please type the corresponding number and press enter to select a menu option:")
     sleep(0.5)
     print("1: Graphs of all bird sightings across all seasons")
@@ -130,21 +130,37 @@ def MenuOptionDescripts():
     print("7: Clear Screen")
     sleep(0.5)
     print("8: Quit")
-    Main()
 
 def Main():
-    MenuOptionDescripts()
-    userinput1 = input()
-    if (userinput1 == "1" or userinput1 == "1 " or userinput1 == "1." or userinput1 == "1. " or userinput1 == " 1" or userinput1 == "1)" or userinput1 == "1) " or userinput1 == "1:" or userinput1 == "1: " or userinput1 == "1;" or userinput1 == "1; " or userinput1 == "1," or userinput1 == "1, "):
+    MainMenuDescriptions()
+    userinput = input()
+    if (userinput == "1" or userinput == "1 " or userinput == "1." or userinput == "1. " or userinput == " 1" or userinput == "1)" or userinput == "1) " or userinput == "1:" or userinput == "1: " or userinput == "1;" or userinput == "1; " or userinput == "1," or userinput == "1, "):
         MenuOption1()
+        Main()
+    elif (userinput == "2" or userinput == "2 " or userinput == "2." or userinput == "2. " or userinput == " 2" or userinput == "2)" or userinput == "2) " or userinput == "2:" or userinput == "2: " or userinput == "2;" or userinput == "2; " or userinput == "2," or userinput == "2, "):
+        print("#2 Not implemented yet, come back later!")
+        Main()
+    elif (userinput == "3" or userinput == "3 " or userinput == "3." or userinput == "3. " or userinput == " 3" or userinput == "3)" or userinput == "3) " or userinput == "3:" or userinput == "3: " or userinput == "3;" or userinput == "3; " or userinput == "3," or userinput == "3, "):
+        print("#3 Not implemented yet, come back later!")
+        Main()
+    elif (userinput == "4" or userinput == "4 " or userinput == "4." or userinput == "4. " or userinput == " 4" or userinput == "4)" or userinput == "4) " or userinput == "4:" or userinput == "4: " or userinput == "4;" or userinput == "4; " or userinput == "4," or userinput == "4, "):
+        print("#4 Not implemented yet, come back later!")
+        Main()
+    elif (userinput == "5" or userinput == "5 " or userinput == "5." or userinput == "5. " or userinput == " 5" or userinput == "5)" or userinput == "5) " or userinput == "5:" or userinput == "5: " or userinput == "5;" or userinput == "5; " or userinput == "5," or userinput == "5, "):
+        print("#5 Not implemented yet, come back later!")
+        Main()
+    elif (userinput == "6" or userinput == "6 " or userinput == "6." or userinput == "6. " or userinput == " 6" or userinput == "6)" or userinput == "6) " or userinput == "6:" or userinput == "6: " or userinput == "6;" or userinput == "6; " or userinput == "6," or userinput == "6, "):
+        print("#6 Not implemented yet, come back later!")
+        Main()
+    elif (userinput == "7" or userinput == "7 " or userinput == "7." or userinput == "7. " or userinput == " 7" or userinput == "7)" or userinput == "7) " or userinput == "7:" or userinput == "7: " or userinput == "7;" or userinput == "7; " or userinput == "7," or userinput == "7, "):
+        print("#7 Not implemented yet, come back later!")
+        Main()
+    elif (userinput == "8" or userinput == "8 " or userinput == "8." or userinput == "8. " or userinput == " 8" or userinput == "8)" or userinput == "8) " or userinput == "8:" or userinput == "8: " or userinput == "8;" or userinput == "8; " or userinput == "8," or userinput == "8, "):
+        print("#8 Not implemented yet, come back later!")
         Main()
     else: 
         print("Sorry, your input was not recognized...")
         sleep(0.5)
-        MenuOptionDescripts()
-    #userinput2 = input("Please type 2 and hit the enter key to see most amount of birds seen across all seasons!\n")
-
-    #elif input: "2", MenuOption2()
-    
+        Main()
 
 Main() #JUST TO TEST FUNCITONALITY, DELETE LATER
