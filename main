@@ -28,24 +28,23 @@ def MenuOption1():
     ax1.set_title("March 1 - May 31")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
+    ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     ax2.bar(x2, y2, color="red")
     ax2.set_title("June 1 - August 31")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
+    ax2.set_xticklabels(x2, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     ax3.bar(x3, y3, color="orange")
     ax3.set_title("September 1 - November 30")
     ax3.set_ylabel("Amount of Birds Sighted")
     ax3.set_xlabel("Bird Type")
+    ax3.set_xticklabels(x3, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     ax4.bar(x4, y4, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
     ax4.set_title("December 1 - February 28")
     ax4.set_ylabel("Amount of Birds Sighted")
     ax4.set_xlabel("Bird Type")
-    ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
-    ax2.set_xticklabels(x2, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
-    ax3.set_xticklabels(x3, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
     ax4.set_xticklabels(x4, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
-    
-    plt.bar(x1, y1)
+     
     plt.bar(x1, y1)
     plt.bar(x2, y2)
     plt.bar(x3, y3)
@@ -95,22 +94,68 @@ def MenuOption3():
 def MenuOption4():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+    df.fillna(0, inplace=True) #eliminates null values by replacing them with 0s
     print(df)
-
-    x=df["Bird Type"]
-    y=df["December 1 - February 28 (Winter)"]
+    
+    x1=df["Bird Type"]
+    y1=df["March 1 - May 31 (Spring)"]
+    x2=df["Bird Type"]
+    y2=df["June 1 - August 31 (Summer)"]
 
     plt.rcParams["figure.autolayout"] = True
-    plt.title("Bird Sightings December 1 - February 28 (Winter)")
-    plt.xlabel("Bird Type")
-    plt.ylabel("Amount of Birds Sighted")
 
-    ax1 = plt.subplot()
-    ax1.scatter(x, y, c=y, s=50, alpha=0.5)
-    ax1.set_xticklabels(x, rotation=90)
+    fig, [ax1, ax2] = plt.subplots(1, 2)
+    ax1.bar(x1, y1, color="green")
+    ax1.set_title("March 1 - May 31")
+    ax1.set_ylabel("Amount of Birds Sighted")
+    ax1.set_xlabel("Bird Type")
+    ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
+    ax2.bar(x2, y2, color="red") #GRAPH IS MULTICOLORED NEED TO FIX
+    ax2.set_title("June 1 - August 31")
+    ax2.set_ylabel("Amount of Birds Sighted")
+    ax2.set_xlabel("Bird Type")
+    ax2.set_xticklabels(x2, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
 
-    plt.plot(x, y)
+    plt.bar(x1, y1)
+    plt.bar(x2, y2)
     plt.show()
+
+def MenuOption5():
+    columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
+    df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+    df.fillna(0, inplace=True) #eliminates null values by replacing them with 0s
+    print(df)
+    
+    x1=df["Bird Type"]
+    y1=df["September 1 - November 30 (Autumn)"]
+    x2=df["Bird Type"]
+    y2=df["December 1 - February 28 (Winter)"]
+
+    plt.rcParams["figure.autolayout"] = True
+
+    fig, [ax1, ax2] = plt.subplots(1, 2)
+    ax1.bar(x1, y1, color="orange")
+    ax1.set_title("September 1 - November 30")
+    ax1.set_ylabel("Amount of Birds Sighted")
+    ax1.set_xlabel("Bird Type")
+    ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
+    ax2.bar(x2, y2, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
+    ax2.set_title("December 1 - February 28")
+    ax2.set_ylabel("Amount of Birds Sighted")
+    ax2.set_xlabel("Bird Type")
+    ax2.set_xticklabels(x2, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
+
+    plt.bar(x1, y1)
+    plt.bar(x2, y2)
+    plt.show()
+
+def MenuOption6():
+    os.system("clear")
+
+def MenuOption7():
+    print("See you next time! Happy Trails!")
+    sleep(1)
+    quit()
 
 def MainMenuDescriptions():
     print("Please type the corresponding number and press enter to select a menu option:")
@@ -125,11 +170,9 @@ def MainMenuDescriptions():
     sleep(0.5)
     print("5: Graphs of the birds sighted during Autumn and Winter")
     sleep(0.5)
-    print("6: Return to Menu")
+    print("6: Clear Screen")
     sleep(0.5)
-    print("7: Clear Screen")
-    sleep(0.5)
-    print("8: Quit")
+    print("7: Quit")
 
 def Main():
     MainMenuDescriptions()
@@ -144,20 +187,16 @@ def Main():
         print("#3 Not implemented yet, come back later!")
         Main()
     elif (userinput == "4" or userinput == "4 " or userinput == "4." or userinput == "4. " or userinput == " 4" or userinput == "4)" or userinput == "4) " or userinput == "4:" or userinput == "4: " or userinput == "4;" or userinput == "4; " or userinput == "4," or userinput == "4, "):
-        print("#4 Not implemented yet, come back later!")
+        MenuOption4()
         Main()
     elif (userinput == "5" or userinput == "5 " or userinput == "5." or userinput == "5. " or userinput == " 5" or userinput == "5)" or userinput == "5) " or userinput == "5:" or userinput == "5: " or userinput == "5;" or userinput == "5; " or userinput == "5," or userinput == "5, "):
-        print("#5 Not implemented yet, come back later!")
+        MenuOption5()
         Main()
     elif (userinput == "6" or userinput == "6 " or userinput == "6." or userinput == "6. " or userinput == " 6" or userinput == "6)" or userinput == "6) " or userinput == "6:" or userinput == "6: " or userinput == "6;" or userinput == "6; " or userinput == "6," or userinput == "6, "):
-        print("#6 Not implemented yet, come back later!")
+        MenuOption6()
         Main()
     elif (userinput == "7" or userinput == "7 " or userinput == "7." or userinput == "7. " or userinput == " 7" or userinput == "7)" or userinput == "7) " or userinput == "7:" or userinput == "7: " or userinput == "7;" or userinput == "7; " or userinput == "7," or userinput == "7, "):
-        print("#7 Not implemented yet, come back later!")
-        Main()
-    elif (userinput == "8" or userinput == "8 " or userinput == "8." or userinput == "8. " or userinput == " 8" or userinput == "8)" or userinput == "8) " or userinput == "8:" or userinput == "8: " or userinput == "8;" or userinput == "8; " or userinput == "8," or userinput == "8, "):
-        print("#8 Not implemented yet, come back later!")
-        Main()
+        MenuOption7()
     else: 
         print("Sorry, your input was not recognized...")
         sleep(0.5)
