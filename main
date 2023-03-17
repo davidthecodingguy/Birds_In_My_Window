@@ -22,7 +22,6 @@ def MenuOption1():
     y4=df["December 1 - February 28 (Winter)"]
 
     plt.rcParams["figure.autolayout"] = True
-
     fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
     ax1.bar(x1, y1, color="green")
     ax1.set_title("March 1 - May 31")
@@ -53,20 +52,20 @@ def MenuOption1():
 
 def MenuOption2():
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
+    #rows = ["American Crow"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     df.fillna(0, inplace=True) #eliminates null values by replacing them with 0s
-    print(df)
+    print(df.max(skipna=True, numeric_only=True))
 
     #NEED TO INTRODUCE CUSTOM FUNCTION FOR MOST SIGHTED BIRD SEEN EACH SEASON
     x1=df["Bird Type"]
-    y1=df["March 1 - May 31 (Spring)"]
+    y1=df.max(skipna=True, numeric_only=True)["March 1 - May 31 (Spring)"]
     x2=df["Bird Type"]
     y2=df["June 1 - August 31 (Summer)"]
     x3=df["Bird Type"]
     y3=df["September 1 - November 30 (Autumn)"]
     x4=df["Bird Type"]
     y4=df["December 1 - February 28 (Winter)"]
-
 
     plt.rcParams["figure.autolayout"] = True
     fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
@@ -85,7 +84,7 @@ def MenuOption2():
     ax3.set_ylabel("Amount of Birds Sighted")
     ax3.set_xlabel("Bird Type")
     ax3.set_xticklabels(x3, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
-    ax4.bar(x4, y4, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
+    ax4.bar(x4, y4, color="purple") #GRAPH IS COMPARING ALL PREVIOUS GRAPHS IN THE SET, NEED TO FIX
     ax4.set_title("December 1 - February 28")
     ax4.set_ylabel("Amount of Birds Sighted")
     ax4.set_xlabel("Bird Type")
@@ -131,7 +130,7 @@ def MenuOption3():
     ax3.set_ylabel("Amount of Birds Sighted")
     ax3.set_xlabel("Bird Type")
     ax3.set_xticklabels(x3, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
-    ax4.bar(x4, y4, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
+    ax4.bar(x4, y4, color="purple") #GRAPH IS COMPARING ALL PREVIOUS GRAPHS IN THE SET, NEED TO FIX
     ax4.set_title("December 1 - February 28")
     ax4.set_ylabel("Amount of Birds Sighted")
     ax4.set_xlabel("Bird Type")
@@ -155,14 +154,13 @@ def MenuOption4():
     y2=df["June 1 - August 31 (Summer)"]
 
     plt.rcParams["figure.autolayout"] = True
-
     fig, [ax1, ax2] = plt.subplots(1, 2)
     ax1.bar(x1, y1, color="green")
     ax1.set_title("March 1 - May 31")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
     ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
-    ax2.bar(x2, y2, color="red") #GRAPH IS MULTICOLORED NEED TO FIX
+    ax2.bar(x2, y2, color="red") #GRAPH IS COMPARING ALL PREVIOUS GRAPHS IN THE SET, NEED TO FIX
     ax2.set_title("June 1 - August 31")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
@@ -184,14 +182,13 @@ def MenuOption5():
     y2=df["December 1 - February 28 (Winter)"]
 
     plt.rcParams["figure.autolayout"] = True
-
     fig, [ax1, ax2] = plt.subplots(1, 2)
     ax1.bar(x1, y1, color="orange")
     ax1.set_title("September 1 - November 30")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
     ax1.set_xticklabels(x1, rotation=90) #UserWarning: FixedFormatter should only be used together with FixedLocator
-    ax2.bar(x2, y2, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
+    ax2.bar(x2, y2, color="purple") #GRAPH IS COMPARING ALL PREVIOUS GRAPHS IN THE SET, NEED TO FIX
     ax2.set_title("December 1 - February 28")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
@@ -233,7 +230,7 @@ def Main():
         MenuOption1()
         Main()
     elif (userinput == "2" or userinput == "2 " or userinput == "2." or userinput == "2. " or userinput == " 2" or userinput == "2)" or userinput == "2) " or userinput == "2:" or userinput == "2: " or userinput == "2;" or userinput == "2; " or userinput == "2," or userinput == "2, "):
-        print("#2 Not implemented yet, come back later!")
+        MenuOption2()
         Main()
     elif (userinput == "3" or userinput == "3 " or userinput == "3." or userinput == "3. " or userinput == " 3" or userinput == "3)" or userinput == "3) " or userinput == "3:" or userinput == "3: " or userinput == "3;" or userinput == "3; " or userinput == "3," or userinput == "3, "):
         print("#3 Not implemented yet, come back later!")
