@@ -4,16 +4,10 @@ This program gives the user information about birds sighted from my office windo
 <br />
 ### Special Instructions:
 <br />
-** Running the Program: **
+**Running the Program:** To run this program, you will need to run the file Birds_In_My_Window/main from the command line.
 <br />
 <br />
-To run this program, you will need to run /Users/dyork/Birds_In_My_Window/main from the command line.
-<br />
-<br />
-** Essential Packages: **
-<br />
-<br />
-In order to run this program correctly, the below packages must be installed. You can do this by copying and pasting unbolded words into your command line!
+**Essential Packages:** In order to run this program correctly, the below packages must be installed. You can do this by copying and pasting unbolded words into your command line!
 <br />
 **Pandas:** pip install pandas
 <br />
