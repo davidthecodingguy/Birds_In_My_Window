@@ -7,16 +7,13 @@ This program gives the user information about birds sighted from my office windo
 <br />
 **Essential Packages:** In order to run this program correctly, the below packages must be installed. You can do this by copying and pasting unbolded words into your command line!
 <br />
-**Pandas:** pip install pandas
+*Pandas:* pip install pandas
 <br />
-**Matplotlib:** pip install matplotlib
-<br />
+*Matplotlib:* pip install matplotlib
 <br />
 ### Project Explanation:
 <br />
-<br />
 ### Project Features:
-<br />
 <br />
 #1: Acquire information regarding the bird sightings in my area from a csv file, stored in local memory, using Pandas read_ functions.
 <br />
