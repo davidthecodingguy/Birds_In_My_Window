@@ -4,8 +4,7 @@ This program gives the user information about birds sighted from my office windo
 <br />
 ### Special Instructions:
 <br />
-<br />
-** Running the Program **
+** Running the Program: **
 <br />
 <br />
 To run this program, you will need to run /Users/dyork/Birds_In_My_Window/main from the command line.
