@@ -8,7 +8,7 @@ This program gives the user information about birds sighted from my office windo
 To run this program, you will need to run /Users/dyork/Birds_In_My_Window/main from the command line.
 <br />
 <br />
-## Essential Packages:
+# Essential Packages:
 <br />
 <br />
 In order to run this program correctly, the below packages must be intalled. You can do this by copying and pasting unbolded words into your command line!
@@ -18,10 +18,10 @@ In order to run this program correctly, the below packages must be intalled. You
 **Matplotlib:** pip install matplotlib
 <br />
 <br />
-## Project Explanation:
+# Project Explanation:
 <br />
 <br />
-## Project Features:
+# Project Features:
 <br />
 <br />
 #1: Acquire information regarding the bird sightings in my area from a csv file, stored in local memory, using Pandas read_ functions.
