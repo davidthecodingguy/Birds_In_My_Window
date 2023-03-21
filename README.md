@@ -2,7 +2,7 @@
 This program gives the user information about birds sighted from my office window, located in the rural community of Annville, KY, USA! The purpose of this project is completely recreational and serves to aid my education in Python!
 <br />
 <br />
-## Special Instructions:
+### Special Instructions:
 <br />
 <br />
 ** Running the Program **
@@ -21,10 +21,10 @@ In order to run this program correctly, the below packages must be installed. Yo
 **Matplotlib:** pip install matplotlib
 <br />
 <br />
-# Project Explanation:
+### Project Explanation:
 <br />
 <br />
-# Project Features:
+### Project Features:
 <br />
 <br />
 #1: Acquire information regarding the bird sightings in my area from a csv file, stored in local memory, using Pandas read_ functions.
