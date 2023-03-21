@@ -1,9 +1,7 @@
 # Birds_In_My_Window
 This program gives the user information about birds sighted from my office window, located in the rural community of Annville, KY, USA! The purpose of this project is completely recreational and serves to aid my education in Python!
 <br />
-<br />
 ### Special Instructions:
-<br />
 **Running the Program:** To run this program, you will need to run the file Birds_In_My_Window/main from the command line.
 <br />
 <br />
