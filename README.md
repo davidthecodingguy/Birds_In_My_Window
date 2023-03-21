@@ -12,7 +12,6 @@ This program gives the user information about birds sighted from my office windo
 *Matplotlib:* pip install matplotlib
 <br />
 ### Project Explanation:
-<br />
 ### Project Features:
 #1: Acquire information regarding the bird sightings in my area from a csv file, stored in local memory, using Pandas read_ functions.
 <br />
