@@ -7,9 +7,9 @@ This program gives the user information about birds sighted from my office windo
 <br />
 **Essential Packages:** In order to run this program correctly, the below packages must be installed. You can do this by copying and pasting the non-italicized words into your command line!
 <br />
-*Pandas:* pip install pandas
+*Pandas:* pip3 install pandas
 <br />
-*Matplotlib:* pip install matplotlib
+*Matplotlib:* pip3 install matplotlib
 <br />
 ### Project Explanation:
 ### Project Features:
