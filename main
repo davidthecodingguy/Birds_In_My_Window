@@ -66,6 +66,8 @@ def MenuOption2():
     print(df3)
     #print(df.max(skipna=True, numeric_only=True))
 
+    #NEED TO ASK DON WHAT COUNTS AS A CUSTOM FUNCTION
+
     #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
     #NEED TO INTRODUCE CUSTOM FUNCTION FOR MOST AND LEAST SIGHTED BIRD FOR EACH SEASON
     x1=df["Bird Type"]
