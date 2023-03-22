@@ -6,6 +6,7 @@ import seaborn as sb #DELETE IF NOT BEING USED
 import os
 from time import sleep
 
+#RENAME FUNCTIONS TO UNDERSCORE FORMAT
 #This function shows graphs for bird sightings across all 4 seasons in a side-by-side format
 def MenuOption1():
     #Loads data into a DataFrame from a file located in this project's 'assets' folder as part of the data reading feature (Feature #1) in this project's README file
@@ -55,30 +56,63 @@ def MenuOption1():
     plt.bar(x4, y4)
     plt.show()
 
+#MOVE THIS TO TOP OF PROGRAM, MAKE SURE ALL DF CALLS STILL WORK ONCE DONE
+columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
+df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+
+def get_most_sighted_bird(df, season):
+    #return df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.max()')["Bird Type"]
+    return df.loc[df[season].idxmax(), "Bird Type"]
+
+def get_least_sighted_bird(df, season):
+    #return df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.max()')["Bird Type"]
+    return df.loc[df[season].idxmin(), "Bird Type"]
+
 #This function shows graphs for the most and least sighted birds across all seasons in a side-by-side format
 def MenuOption2():
     #Loads data into a DataFrame from a file located in this project's 'assets' folder as part of the data reading feature (Feature #1) in this project's README file
-    columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
-    df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
+    #columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
+    #df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
     #df2 = df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.max()')["Bird Type"] #+ df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.min()')["Bird Type"]
-    df3 = df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.min()')["Bird Type"]
+    #df3 = df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.min()')["Bird Type"]
     #print(df2)
-    print(df3)
+    #print(df3)
     #print(df.max(skipna=True, numeric_only=True))
 
-    #NEED TO ASK DON WHAT COUNTS AS A CUSTOM FUNCTION
-
     #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
-    #NEED TO INTRODUCE CUSTOM FUNCTION FOR MOST AND LEAST SIGHTED BIRD FOR EACH SEASON
-    x1=df3
-    y1=df["March 1 - May 31 (Spring)"]
-    x2=df["Bird Type"]
-    y2=df["June 1 - August 31 (Summer)"]
-    x3=df["Bird Type"]
-    y3=df["September 1 - November 30 (Autumn)"]
-    x4=df["Bird Type"]
-    y4=df["December 1 - February 28 (Winter)"]
+    most_sighted_spring = get_most_sighted_bird(df, "March 1 - May 31 (Spring)")
+    least_sighted_spring = get_least_sighted_bird(df, "March 1 - May 31 (Spring)")
+    most_sighted_summer = get_most_sighted_bird(df, "June 1 - August 31 (Summer)")
+    least_sighted_summer = get_least_sighted_bird(df, "June 1 - August 31 (Summer)")
+    most_sighted_autumn = get_most_sighted_bird(df, "September 1 - November 30 (Autumn)")
+    least_sighted_autumn = get_least_sighted_bird(df, "September 1 - November 30 (Autumn)")
+    most_sighted_winter = get_most_sighted_bird(df, "December 1 - February 28 (Winter)")
+    least_sighted_winter = get_least_sighted_bird(df, "December 1 - February 28 (Winter)")
 
+    x1 = [most_sighted_spring, least_sighted_spring]
+    y1 = [df.loc[df["Bird Type"] == most_sighted_spring, "March 1 - May 31 (Spring)"].values[0], 
+      df.loc[df["Bird Type"] == least_sighted_spring, "March 1 - May 31 (Spring)"].values[0]]
+    x2 = [most_sighted_summer, least_sighted_summer]
+    y2 = [df.loc[df["Bird Type"] == most_sighted_summer, "June 1 - August 31 (Summer)"].values[0], 
+      df.loc[df["Bird Type"] == least_sighted_summer, "June 1 - August 31 (Summer)"].values[0]]
+    x3 = [most_sighted_autumn, least_sighted_autumn]
+    y3 = [df.loc[df["Bird Type"] == most_sighted_autumn, "September 1 - November 30 (Autumn)"].values[0], 
+      df.loc[df["Bird Type"] == least_sighted_autumn, "September 1 - November 30 (Autumn)"].values[0]]
+    x4 = [most_sighted_winter, least_sighted_winter]
+    y4 = [df.loc[df["Bird Type"] == most_sighted_winter, "December 1 - February 28 (Winter)"].values[0], 
+      df.loc[df["Bird Type"] == least_sighted_winter, "December 1 - February 28 (Winter)"].values[0]]
+    
+    #NEED TO INTRODUCE CUSTOM FUNCTION FOR MOST AND LEAST SIGHTED BIRD FOR EACH SEASON
+    #x1=df
+    #y1=df["March 1 - May 31 (Spring)"]
+    #x2=df["Bird Type"]
+    #y2=df["June 1 - August 31 (Summer)"]
+    #x3=df["Bird Type"]
+    #y3=df["September 1 - November 30 (Autumn)"]
+    #x4=df["Bird Type"]
+    #y4=df["December 1 - February 28 (Winter)"]
+
+    #NEED TO RENAME GRAPHS APPROPRIATELY
     #Formats information for data visualization as part of the basic plots feature (Feature #4) in this project's README file
     plt.rcParams["figure.autolayout"] = True
     fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
