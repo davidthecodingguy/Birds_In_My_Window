@@ -60,9 +60,9 @@ def MenuOption2():
     #Loads data into a DataFrame from a file located in this project's 'assets' folder as part of the data reading feature (Feature #1) in this project's README file
     columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
     df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
-    df2 = df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.max()')["Bird Type"]
+    #df2 = df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.max()')["Bird Type"] #+ df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.min()')["Bird Type"]
     df3 = df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.min()')["Bird Type"]
-    print(df2)
+    #print(df2)
     print(df3)
     #print(df.max(skipna=True, numeric_only=True))
 
@@ -70,7 +70,7 @@ def MenuOption2():
 
     #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
     #NEED TO INTRODUCE CUSTOM FUNCTION FOR MOST AND LEAST SIGHTED BIRD FOR EACH SEASON
-    x1=df["Bird Type"]
+    x1=df3
     y1=df["March 1 - May 31 (Spring)"]
     x2=df["Bird Type"]
     y2=df["June 1 - August 31 (Summer)"]
