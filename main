@@ -38,7 +38,6 @@ def menu_option_1():
     y4 = [df.loc[df["Bird Type"] == most_sighted_winter, "December 1 - February 28 (Winter)"].values[0], 
       df.loc[df["Bird Type"] == least_sighted_winter, "December 1 - February 28 (Winter)"].values[0]]
 
-    #IF NEEDED, RENAME GRAPHS APPROPRIATELY
     #Formats information for data visualization as part of the basic plots feature (Feature #4) in this project's README file
     plt.rcParams["figure.autolayout"] = True
     fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
@@ -217,7 +216,7 @@ def main():
         main()
     elif (userinput == "6" or userinput == "6 " or userinput == "6." or userinput == "6. " or userinput == " 6" or userinput == "6)" or userinput == "6) " or userinput == "6:" or userinput == "6: " or userinput == "6;" or userinput == "6; " or userinput == "6," or userinput == "6, "):
         menu_option_6()
-    else: 
+    else:
         print("Sorry, your input was not recognized...")
         sleep(0.5)
         main()
