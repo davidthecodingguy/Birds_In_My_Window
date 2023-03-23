@@ -7,62 +7,14 @@ from time import sleep
 columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
 df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
 
-#This function shows graphs for bird sightings across all 4 seasons in a side-by-side format
-def menu_option_1():
-    df.fillna(0, inplace=True) #Eliminates null values by replacing them with 0s for as part of the data cleaning feature (Feature #2) in the README file
-    print(df)
-    
-    #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
-    x1=df["Bird Type"]
-    y1=df["March 1 - May 31 (Spring)"]
-    x2=df["Bird Type"]
-    y2=df["June 1 - August 31 (Summer)"]
-    x3=df["Bird Type"]
-    y3=df["September 1 - November 30 (Autumn)"]
-    x4=df["Bird Type"]
-    y4=df["December 1 - February 28 (Winter)"]
-
-    #Formats information for data visualization as part of the basic plots feature (Feature #4) in this project's README file
-    plt.rcParams["figure.autolayout"] = True
-    fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
-    ax1.bar(x1, y1, color="green")
-    ax1.set_title("March 1 - May 31")
-    ax1.set_ylabel("Amount of Birds Sighted")
-    ax1.set_xlabel("Bird Type")
-    ax1.set_xticklabels(x1, rotation=90)
-    ax2.bar(x2, y2, color="red")
-    ax2.set_title("June 1 - August 31")
-    ax2.set_ylabel("Amount of Birds Sighted")
-    ax2.set_xlabel("Bird Type")
-    ax2.set_xticklabels(x2, rotation=90)
-    ax3.bar(x3, y3, color="orange")
-    ax3.set_title("September 1 - November 30")
-    ax3.set_ylabel("Amount of Birds Sighted")
-    ax3.set_xlabel("Bird Type")
-    ax3.set_xticklabels(x3, rotation=90)
-    ax4.bar(x4, y4, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
-    ax4.set_title("December 1 - February 28")
-    ax4.set_ylabel("Amount of Birds Sighted")
-    ax4.set_xlabel("Bird Type")
-    ax4.set_xticklabels(x4, rotation=90)
-
-    #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file 
-    plt.bar(x1, y1)
-    plt.bar(x2, y2)
-    plt.bar(x3, y3)
-    plt.bar(x4, y4)
-    plt.show()
-
+#Acquires information about least and most sighted birds using functions as part of the custom functions feature (Feature #3) in this project's README file
 def get_most_sighted_bird(df, season):
-    #return df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.max()')["Bird Type"]
     return df.loc[df[season].idxmax(), "Bird Type"]
-
 def get_least_sighted_bird(df, season):
-    #return df.query('`March 1 - May 31 (Spring)` == `March 1 - May 31 (Spring)`.max()')["Bird Type"]
     return df.loc[df[season].idxmin(), "Bird Type"]
 
 #This function shows graphs for the most and least sighted birds across all seasons in a side-by-side format
-def menu_option_2():
+def menu_option_1():
     #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
     most_sighted_spring = get_most_sighted_bird(df, "March 1 - May 31 (Spring)")
     least_sighted_spring = get_least_sighted_bird(df, "March 1 - May 31 (Spring)")
@@ -119,9 +71,8 @@ def menu_option_2():
     plt.show()
 
 #This function shows graphs for bird sightings during Spring and Summer in a side-by-side format
-def menu_option_3():
-    df.fillna(0, inplace=True) #Eliminates null values by replacing them with 0s as part of the data cleaning feature (Feature #2) in the README file
-    print(df)
+def menu_option_2():
+    df.fillna(0, inplace=False) #Eliminates null values by replacing them with 0s as part of the data cleaning feature (Feature #2) in the README file
     
     #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
     x1=df["Bird Type"]
@@ -149,9 +100,8 @@ def menu_option_3():
     plt.show()
 
 #This function shows graphs for bird sightings during Autumn and Winter in a side-by-side format
-def menu_option_4():
-    df.fillna(0, inplace=True) #Eliminates null values by replacing them with 0s as part of the data cleaning feature (Feature #2) in the README file
-    print(df)
+def menu_option_3():
+    df.fillna(0, inplace=False) #Eliminates null values by replacing them with 0s as part of the data cleaning feature (Feature #2) in the README file
     
     #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
     x1=df["Bird Type"]
@@ -178,6 +128,51 @@ def menu_option_4():
     plt.bar(x2, y2)
     plt.show()
 
+#This function shows graphs for bird sightings across all 4 seasons in a side-by-side format
+def menu_option_4():
+    df.fillna(0, inplace=False) #Eliminates null values by replacing them with 0s for as part of the data cleaning feature (Feature #2) in the README file
+    
+    #Acquires information about seasonal bird sightings using functions as part of the custom functions feature (Feature #3) in this project's README file
+    x1=df["Bird Type"]
+    y1=df["March 1 - May 31 (Spring)"]
+    x2=df["Bird Type"]
+    y2=df["June 1 - August 31 (Summer)"]
+    x3=df["Bird Type"]
+    y3=df["September 1 - November 30 (Autumn)"]
+    x4=df["Bird Type"]
+    y4=df["December 1 - February 28 (Winter)"]
+
+    #Formats information for data visualization as part of the basic plots feature (Feature #4) in this project's README file
+    plt.rcParams["figure.autolayout"] = True
+    fig, [ax1, ax2, ax3, ax4] = plt.subplots(1, 4)
+    ax1.bar(x1, y1, color="green")
+    ax1.set_title("March 1 - May 31")
+    ax1.set_ylabel("Amount of Birds Sighted")
+    ax1.set_xlabel("Bird Type")
+    ax1.set_xticklabels(x1, rotation=90)
+    ax2.bar(x2, y2, color="red")
+    ax2.set_title("June 1 - August 31")
+    ax2.set_ylabel("Amount of Birds Sighted")
+    ax2.set_xlabel("Bird Type")
+    ax2.set_xticklabels(x2, rotation=90)
+    ax3.bar(x3, y3, color="orange")
+    ax3.set_title("September 1 - November 30")
+    ax3.set_ylabel("Amount of Birds Sighted")
+    ax3.set_xlabel("Bird Type")
+    ax3.set_xticklabels(x3, rotation=90)
+    ax4.bar(x4, y4, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
+    ax4.set_title("December 1 - February 28")
+    ax4.set_ylabel("Amount of Birds Sighted")
+    ax4.set_xlabel("Bird Type")
+    ax4.set_xticklabels(x4, rotation=90)
+
+    #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file 
+    plt.bar(x1, y1)
+    plt.bar(x2, y2)
+    plt.bar(x3, y3)
+    plt.bar(x4, y4)
+    plt.show()
+
 def menu_option_5():
     os.system("clear")
 
@@ -189,13 +184,13 @@ def menu_option_6():
 def main_menu_descriptions():
     print("Please type the corresponding number and press enter to select a menu option:")
     sleep(0.5)
-    print("1: Graphs of all bird sightings across all seasons")
+    print("1: See graphs of the most and least sighted bird(s) for each season")
     sleep(0.5)
-    print("2: Graphs of the most and least sighted bird(s) for each season")
+    print("2: See graphs of the birds sighted during Spring and Summer")
     sleep(0.5)
-    print("3: Graphs of the birds sighted during Spring and Summer")
+    print("3: See graphs of the birds sighted during Autumn and Winter")
     sleep(0.5)
-    print("4: Graphs of the birds sighted during Autumn and Winter")
+    print("4: See graphs of all bird sightings across all seasons")
     sleep(0.5)
     print("5: Clear Screen")
     sleep(0.5)
