@@ -12,6 +12,12 @@ This program gives the user information about birds sighted from my office windo
 *Matplotlib:* pip3 install matplotlib
 <br />
 ### Project Explanation:
+The purpose of this project is to show seasonal bird sighting data for Annville, KY in a simple, straight forward, format while giving the user the ability to choose between different self-explanatory data outputs. These different graphical outputs allow the user to easily see the most and least sighted birds across all seasons (excluding birds not sighted at all), sightings during the warmer months of Spring and Summer, sightings during the colder months of Autumn and Winter, and then all sightings across the four seasons, each in a side-by-side format for easy comparison. Although this is mainly recreational and non-scientific, a variety of information can be gleaned from the various outputs. Below is a list of the most interesting data output by the data views:
+- **Hardest to Spot:** the Pileated Woodpecker (my personal favorite), the Barred Owl, and the Red Headed Woodpecker are the least common birds sighted all year.
+- **Frequent Flyers:** the Robin, the Rusty Blackbird, and the Cardinal are the most common birds sighted all year.
+- **Fair Weather Friends:** the Rusty Blackbird is a fairly uncommon sight in the Spring months as they're still making their leisurely migration back to their Northern homes and become a common sight in the Summer. They're easy to see during Autumn as well, but are starting to head back to warmer climates.
+- **Snow Birds:** the Cardinal, the Crow, and the Carolina Wren are easy to see year round as they're comfortable with cold temperatures and don't migrate at all!
+- **Rare Sights:** the Pileated Woodpecker is a fairly rare bird to spot in the open as they prefer large forests with many dead trees, but can occasionally be spotted in the very rural town of Annville, KY, as the data indicates.
 ### Project Features:
 #1: Acquire information regarding the bird sightings in my area from a csv file, stored in local memory, using Pandas read_ functions.
 <br />
