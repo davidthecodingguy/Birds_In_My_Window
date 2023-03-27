@@ -3,6 +3,11 @@ import matplotlib.pyplot as plt
 import os
 from time import sleep
 
+#ADD A REQUIREMENTS.TXT FILE (IVAN)
+#LOOK AT RESOLVING THE WARNINGS WITH FIXEDFORMATTER AND FIXEDLOCATOR (JAMES)
+#CREATE A WAY FOR USERS TO CONTINUE INPUT AFTER INITIAL INPUT -OR- EXPLAIN IN THE README THAT THE USER NEEDS TO EXIT THE GRAPH WINDOW (JAMES)
+#UPDATE README WITH CHANGES MADE LIKE THE FILE HAS A .PY NOW AND REQUIREMENTS.TXT FILE HAS ALL OF THE REQUIRED PACKAGES
+
 #Loads data into a DataFrame from a file located in this project's 'assets' folder as part of the data reading feature (Feature #1) in this project's README file
 columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
 df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
@@ -63,10 +68,6 @@ def menu_option_1():
     ax4.set_xticklabels(x4, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file
-    plt.bar(x1, y1)
-    plt.bar(x2, y2)
-    plt.bar(x3, y3)
-    plt.bar(x4, y4)
     plt.show()
 
 #This function shows graphs for bird sightings during Spring and Summer in a side-by-side format
@@ -94,8 +95,6 @@ def menu_option_2():
     ax2.set_xticklabels(x2, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file
-    plt.bar(x1, y1)
-    plt.bar(x2, y2)
     plt.show()
 
 #This function shows graphs for bird sightings during Autumn and Winter in a side-by-side format
@@ -123,8 +122,6 @@ def menu_option_3():
     ax2.set_xticklabels(x2, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file
-    plt.bar(x1, y1)
-    plt.bar(x2, y2)
     plt.show()
 
 #This function shows graphs for bird sightings across all 4 seasons in a side-by-side format
@@ -166,10 +163,6 @@ def menu_option_4():
     ax4.set_xticklabels(x4, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file 
-    plt.bar(x1, y1)
-    plt.bar(x2, y2)
-    plt.bar(x3, y3)
-    plt.bar(x4, y4)
     plt.show()
 
 def menu_option_5():
