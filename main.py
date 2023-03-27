@@ -3,9 +3,6 @@ import matplotlib.pyplot as plt
 import os
 from time import sleep
 
-#CREATE A WAY FOR USERS TO CONTINUE INPUT AFTER INITIAL INPUT -OR- EXPLAIN IN THE README THAT THE USER NEEDS TO EXIT THE GRAPH WINDOW (JAMES)
-#UPDATE README WITH CHANGES MADE: THE FILE NAMED MAIN.PY NOW AND REQUIREMENTS.TXT FILE HAS ALL OF THE REQUIRED PACKAGES
-
 #Loads data into a DataFrame from a file located in this project's 'assets' folder as part of the data reading feature (Feature #1) in this project's README file
 columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
 df = pd.read_csv("assets/Bird_Sightings_Annville_KY.csv", usecols=columns)
