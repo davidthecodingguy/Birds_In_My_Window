@@ -7,6 +7,9 @@ This program gives the user information about birds sighted from my office windo
 <br />
 **Essential Packages:** In order to run this program correctly, please ensure that all of the packages in the requirements.txt file are installed!
 <br />
+<br />
+**Continuing the Loop:** To continue selecting menu options after you've chosen an item, you will need to exit the graph pop-up window. Once you've exited the window, you'll be prompted with more options!
+<br />
 ### Project Explanation:
 The purpose of this project is to show seasonal bird sighting data for Annville, KY in a simple, straight forward, format while giving the user the ability to choose between different self-explanatory data outputs. These different graphical outputs allow the user to easily see the most and least sighted birds across all seasons (excluding birds not sighted at all), sightings during the warmer months of Spring and Summer, sightings during the colder months of Autumn and Winter, and then all sightings across the four seasons, each in a side-by-side format for easy comparison. Although this is mainly recreational and non-scientific, a variety of information can be gleaned from the various outputs. Below is a list of the most interesting data output by the data views:
 - **Hardest to Spot:** the Pileated Woodpecker (my personal favorite), the Barred Owl, and the Red Headed Woodpecker are the least common birds sighted all year.
