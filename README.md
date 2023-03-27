@@ -2,14 +2,10 @@
 This program gives the user information about birds sighted from my office window, located in the rural community of Annville, KY, USA! The purpose of this project is completely recreational and serves to aid my education in Python!
 <br />
 ### Special Instructions:
-**Running the Program:** To run this program, you will need to run the file Birds_In_My_Window/main from the command line.
+**Running the Program:** To run this program, you will need to run the file Birds_In_My_Window/main.py from the command line.
 <br />
 <br />
-**Essential Packages:** In order to run this program correctly, the below packages must be installed. You can do this by copying and pasting the non-italicized words into your command line!
-<br />
-*Pandas:* pip3 install pandas
-<br />
-*Matplotlib:* pip3 install matplotlib
+**Essential Packages:** In order to run this program correctly, please ensure that all of the packages in the requirements.txt file are installed!
 <br />
 ### Project Explanation:
 The purpose of this project is to show seasonal bird sighting data for Annville, KY in a simple, straight forward, format while giving the user the ability to choose between different self-explanatory data outputs. These different graphical outputs allow the user to easily see the most and least sighted birds across all seasons (excluding birds not sighted at all), sightings during the warmer months of Spring and Summer, sightings during the colder months of Autumn and Winter, and then all sightings across the four seasons, each in a side-by-side format for easy comparison. Although this is mainly recreational and non-scientific, a variety of information can be gleaned from the various outputs. Below is a list of the most interesting data output by the data views:
