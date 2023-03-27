@@ -3,9 +3,8 @@ import matplotlib.pyplot as plt
 import os
 from time import sleep
 
-#LOOK AT RESOLVING THE WARNINGS WITH FIXEDFORMATTER AND FIXEDLOCATOR (JAMES)
 #CREATE A WAY FOR USERS TO CONTINUE INPUT AFTER INITIAL INPUT -OR- EXPLAIN IN THE README THAT THE USER NEEDS TO EXIT THE GRAPH WINDOW (JAMES)
-#UPDATE README WITH CHANGES MADE LIKE THE FILE HAS A .PY NOW AND REQUIREMENTS.TXT FILE HAS ALL OF THE REQUIRED PACKAGES
+#UPDATE README WITH CHANGES MADE: THE FILE NAMED MAIN.PY NOW AND REQUIREMENTS.TXT FILE HAS ALL OF THE REQUIRED PACKAGES
 
 #Loads data into a DataFrame from a file located in this project's 'assets' folder as part of the data reading feature (Feature #1) in this project's README file
 columns = ["Bird Type", "March 1 - May 31 (Spring)", "June 1 - August 31 (Summer)", "September 1 - November 30 (Autumn)", "December 1 - February 28 (Winter)"]
@@ -49,21 +48,25 @@ def menu_option_1():
     ax1.set_title("March 1 - May 31")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
+    ax1.set_xticks(range(len(x1)))
     ax1.set_xticklabels(x1, rotation=90)
     ax2.bar(x2, y2, color="red")
     ax2.set_title("June 1 - August 31")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
+    ax2.set_xticks(range(len(x2)))
     ax2.set_xticklabels(x2, rotation=90)
     ax3.bar(x3, y3, color="orange")
     ax3.set_title("September 1 - November 30")
     ax3.set_ylabel("Amount of Birds Sighted")
     ax3.set_xlabel("Bird Type")
+    ax3.set_xticks(range(len(x3)))
     ax3.set_xticklabels(x3, rotation=90)
-    ax4.bar(x4, y4, color="purple") #GRAPH IS COMPARING ALL PREVIOUS GRAPHS IN THE SET, NEED TO FIX
+    ax4.bar(x4, y4, color="purple")
     ax4.set_title("December 1 - February 28")
     ax4.set_ylabel("Amount of Birds Sighted")
     ax4.set_xlabel("Bird Type")
+    ax4.set_xticks(range(len(x4)))
     ax4.set_xticklabels(x4, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file
@@ -86,11 +89,13 @@ def menu_option_2():
     ax1.set_title("March 1 - May 31")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
+    ax1.set_xticks(range(len(x1)))
     ax1.set_xticklabels(x1, rotation=90)
-    ax2.bar(x2, y2, color="red") #GRAPH IS COMPARING ALL PREVIOUS GRAPHS IN THE SET, NEED TO FIX
+    ax2.bar(x2, y2, color="red")
     ax2.set_title("June 1 - August 31")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
+    ax2.set_xticks(range(len(x2)))
     ax2.set_xticklabels(x2, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file
@@ -113,11 +118,13 @@ def menu_option_3():
     ax1.set_title("September 1 - November 30")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
+    ax1.set_xticks(range(len(x1)))
     ax1.set_xticklabels(x1, rotation=90)
-    ax2.bar(x2, y2, color="purple") #GRAPH IS COMPARING ALL PREVIOUS GRAPHS IN THE SET, NEED TO FIX
+    ax2.bar(x2, y2, color="purple")
     ax2.set_title("December 1 - February 28")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
+    ax2.set_xticks(range(len(x2)))
     ax2.set_xticklabels(x2, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file
@@ -144,21 +151,25 @@ def menu_option_4():
     ax1.set_title("March 1 - May 31")
     ax1.set_ylabel("Amount of Birds Sighted")
     ax1.set_xlabel("Bird Type")
+    ax1.set_xticks(range(len(x1)))
     ax1.set_xticklabels(x1, rotation=90)
     ax2.bar(x2, y2, color="red")
     ax2.set_title("June 1 - August 31")
     ax2.set_ylabel("Amount of Birds Sighted")
     ax2.set_xlabel("Bird Type")
+    ax2.set_xticks(range(len(x2)))
     ax2.set_xticklabels(x2, rotation=90)
     ax3.bar(x3, y3, color="orange")
     ax3.set_title("September 1 - November 30")
     ax3.set_ylabel("Amount of Birds Sighted")
     ax3.set_xlabel("Bird Type")
+    ax3.set_xticks(range(len(x3)))
     ax3.set_xticklabels(x3, rotation=90)
-    ax4.bar(x4, y4, color="purple") #GRAPH IS MULTICOLORED, NEED TO FIX
+    ax4.bar(x4, y4, color="purple")
     ax4.set_title("December 1 - February 28")
     ax4.set_ylabel("Amount of Birds Sighted")
     ax4.set_xlabel("Bird Type")
+    ax4.set_xticks(range(len(x4)))
     ax4.set_xticklabels(x4, rotation=90)
 
     #Visualizes data as part of the basic plots feature (Feature #4) in this project's README file 
